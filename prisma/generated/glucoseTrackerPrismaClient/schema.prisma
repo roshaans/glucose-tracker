@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output     = "./generated/glucoseTrackerPrismaClient"
+
+}
+
+model SensorRecords {
+  id         Int    @default(autoincrement())
+  label      String
+  session_id String
+
+  sqv       Int
+  direction String
+
+  date        DateTime
+  date_string String
+
+  @@unique([session_id, date])
+  @@map("sensor_records")
+}
+
+model Labels {
+  sensor_serial_no String  @unique
+  label            String?
+
+  time_created DateTime @default(now())
+  @@map("labels")
+}
+
+model DatabaseKeys {
+  id          String   @id
+  description String
+  stringKey   String?  @default("")
+  intKey      Int?     @default(0)
+  boolKey     Boolean? @default(false)
+
+  @@map("database_keys")
+}
