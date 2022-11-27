@@ -1,4 +1,5 @@
-# Dexcom Sensor Tracker
+# GlucoCzech
+## Dexcom Sensor Tracker
 
 This program allows to label and track Dexcom glucose sensors for a fleet of users. 
 

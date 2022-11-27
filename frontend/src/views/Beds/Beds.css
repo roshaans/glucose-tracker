@@ -1,0 +1,17 @@
+.beds-container {
+    padding: 24px 32px;
+    padding-bottom: 80px;
+}
+
+.btn-manage {
+    width: 130px;
+    background-color: #4F4F4F;
+    color: white;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.btn-manage:hover {
+    cursor: pointer;
+}
